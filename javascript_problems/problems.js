@@ -44,7 +44,14 @@ function removeFromString(str, index, count) {
  *
  */
 
-function reverse(arr) {}
+function reverse(arr) {
+  for (let i = 0; i < arr.length / 2; i++) {
+    let value = arr[i];
+    arr[i] = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = value;
+  }
+  return arr;
+}
 
 /* min
  * Write a function called min , which accepts an array (arr) and returns the lowest number in that array.
