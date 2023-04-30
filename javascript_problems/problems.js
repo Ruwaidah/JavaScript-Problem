@@ -20,7 +20,18 @@ function repeat(str, multipler) {
  * Hint: Remember to use zero based indexing. With zero based indexing, the first position is accessed with a 0, the second position is accessed with a 1, etc.
  */
 
-function removeFromString(str, index, count) {}
+function removeFromString(str, index, count) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (i === index) {
+      i = index + count - 1;
+      continue;
+    } else {
+      newStr += str[i];
+    }
+  }
+  return newStr;
+}
 
 /* reverse
  * Write a function called reverse, which accepts an array (arr) and returns the same array with all of the values reversed.
