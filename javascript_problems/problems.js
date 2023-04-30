@@ -77,7 +77,11 @@ function min(arr) {
 * Hint: Remember to use zero based indexing. With zero based indexing, the first position is accessed with a 0, the second position is accessed with a 1, etc.
 */
 
-function slice(arr, start, stop) {}
+function slice(arr, start, stop) {
+  let newArr = [];
+  for (let i = start; i < stop && i < arr.length; i++) newArr.push(arr[i]);
+  return newArr;
+}
 
 /*
     *Write a function called keys, which accepts an object (obj) and returns an array of all of the keys in the object. 
