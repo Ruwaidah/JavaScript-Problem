@@ -58,7 +58,13 @@ function reverse(arr) {
  *Do not use the built in Math.min() function!
  */
 
-function min(arr) {}
+function min(arr) {
+  let minNum = arr[0];
+  for (let i of arr) {
+    if (i < minNum) minNum = i;
+  }
+  return minNum;
+}
 
 /*
 *
