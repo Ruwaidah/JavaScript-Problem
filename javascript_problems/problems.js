@@ -90,7 +90,11 @@ function slice(arr, start, stop) {
     *Hint: Only focus on the keys, not the values.
 */
 
-function keys(obj) {}
+function keys(obj) {
+  const arr = [];
+  for (let key in obj) arr.push(key);
+  return arr;
+}
 
 /*
     Write a function called values, which accepts an object (obj) and returns an array of all of the values in the object. 
@@ -98,7 +102,11 @@ function keys(obj) {}
     
 */
 
-function values(obj) {}
+function values(obj) {
+  const arr = [];
+  for (let key in obj) arr.push(obj[key]);
+  return arr;
+}
 
 /*
     Write a function called swapKeyAndValue which accepts an object (obj) and a key (key). 
@@ -109,7 +117,15 @@ function values(obj) {}
 */
 
 function swapKeyAndValue(obj, key) {
-  return "need to complete";
+  let newObj = {};
+  for (let k in obj) {
+    if (k === key) {
+      let value = obj[key];
+      newObj[value] = k;
+    } else newObj[k] = obj[k];
+  }
+  return newObj;
+  // return "need to complete";
 }
 
 // Section Two: Problem Solving
@@ -130,7 +146,24 @@ function swapKeyAndValue(obj, key) {
     Hint: Think about how you'd use for loops and the number n in order to arrive at the correct solution.
 */
 
-function multiples(x, n) {}
+function multiples(x, n) {
+  let arr = [];
+  let num;
+  let value;
+  if (typeof x === "object") {
+    arr = [x[0]];
+    num = x[1];
+    value = x[0];
+  } else {
+    arr = [x];
+    num = n;
+    value = x;
+  }
+  for (let i = 1; i < num; i++) {
+    arr.push(arr[i - 1] + value);
+  }
+  return arr;
+}
 
 /*
     Write a function called pluck, which takes an array of objects (arr) and the name of a key (key). 
@@ -143,7 +176,13 @@ function multiples(x, n) {}
     You can do this! If your first, or even your second, solution don't work - that's totally normal! Keep working through it :)
 */
 
-function pluck(arr, key) {}
+function pluck(arr, key) {
+  let newArr = [];
+  for (element of arr) {
+    if (element[key]) newArr.push(element[key]);
+  }
+  return newArr;
+}
 /*
     Write a function called twoHighest that takes an array of numbers (arr) and returns the two highest numbers within the array.  
     The returned value should be an array in the following format: [secondHighest, highest]. 
