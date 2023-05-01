@@ -230,7 +230,18 @@ function minMaxKeyInObject(obj) {
     At this point in these exercises, we would like to ask you to think critically about how to approach this problem without a hint.
 */
 
-function stringFromObject(obj) {}
+function stringFromObject(obj) {
+  let string = "";
+  // for (let key in obj) {
+  //   if (string === "") string = `${key} = ${obj[key]}`;
+  //   else string += `, ${key} = ${obj[key]}`;
+  // }
+  // return string;
+
+  // OR
+  for (let key in obj) string += `${key} = ${obj[key]}, `;
+  return string.slice(0, string.length - 2);
+}
 
 /* 
     Write a function called countNumbers, which accepts an array of strings (arr) and returns a count of the number of strings in the array that can be converted into a number. 
