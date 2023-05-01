@@ -251,4 +251,8 @@ function stringFromObject(obj) {
 
 */
 
-function countNumbers(arr) {}
+function countNumbers(arr) {
+  let count = 0;
+  for (element of arr) if (Number(element)) count++;
+  return count;
+}
