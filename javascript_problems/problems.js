@@ -191,7 +191,17 @@ function pluck(arr, key) {
     Hint: This will be similar to the max function you completed earlier, but with additional complexity. 
 */
 
-function twoHighest(arr) {}
+function twoHighest(arr) {
+  let highest = arr[0];
+  let secondHighest = arr[0];
+  for (element of arr)
+    if (element > highest) {
+      secondHighest = highest;
+      highest = element;
+    }
+
+  return [secondHighest, highest];
+}
 
 /*
     Write a function called minMaxKeyInObject that accepts an object (obj) with numeric integer keys. 
@@ -201,7 +211,15 @@ function twoHighest(arr) {}
 
 */
 
-function minMaxKeyInObject(obj) {}
+function minMaxKeyInObject(obj) {
+  let arr = [];
+  for (let key in obj) {
+    if (arr.length < 1) arr = [Number(key), Number(key)];
+    else if (arr[1] < key) arr[1] = Number(key);
+    else if (arr[0] > key) arr[0] = Number(key);
+  }
+  return arr;
+}
 
 /*
     Write a function called stringFromObject that generates a string from an object's key/value pairs. 
